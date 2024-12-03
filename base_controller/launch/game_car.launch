@@ -1,0 +1,12 @@
+<launch>
+      bring up gmapping -->
+    <!--<include file="$(find orbbec_camera)/launch/dabai_dcw.launch"/> -->
+    <!-- bring up ld06 -->
+    <include file="$(find ld06_lidar)/launch/ld06.launch"/> 
+    <!-- bring up base controller -->
+    <node pkg="base_controller" type="base_controller" name="base_controller_node" output="screen"/>
+    <!-- publish tf between base_link and laser -->
+    <node pkg="joy" type="joy_node" name="joy_node"/>
+
+    <!--<node pkg="image_pkg" type="image_show.py" name="image_show_node" output="screen"/>-->
+</launch>
